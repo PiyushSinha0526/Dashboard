@@ -63,12 +63,12 @@ function BasicTable() {
             {page.map((row) => {
               prepareRow(row);
               return (
-                <tr {...row.getRowProps()} className="border">
+                <tr {...row.getRowProps()} className="border hover:bg-gray-700">
                   {row.cells.map((cell) => {
                     return (
                       <td
                         {...cell.getCellProps}
-                        className="p-3 text-left font-bold "
+                        className="p-3 text-left font-bold"
                       >
                         {cell.render("Cell")}
                       </td>
@@ -88,14 +88,14 @@ function BasicTable() {
           </strong>{" "}
         </span>
         <button
-          className="px-4 py-1 rounded-lg bg-white text-gray-900 font-bold active:scale-95"
+          className="px-4 py-1 rounded-lg cursor-pointer bg-white text-gray-900 font-bold active:scale-95"
           onClick={() => previousPage()}
           disabled={!canPreviousPage}
         >
           prev
         </button>
         <button
-          className="px-4 py-1 rounded-lg bg-white text-gray-900 font-bold active:scale-95"
+          className="px-4 py-1 rounded-lg cursor-pointer bg-white text-gray-900 font-bold active:scale-95"
           onClick={() => nextPage()}
           disabled={!canNextPage}
         >
