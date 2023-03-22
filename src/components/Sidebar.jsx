@@ -12,8 +12,8 @@ function Sidebar() {
     { name: "Dashboard", icon: <FaHome size={24} />, path: "/" },
     { name: "Orders", icon: <AiTwotoneShop size={24} />, path: "/orders" },
     { name: "Users", icon: <FaUsers size={24} />, path: "/users" },
-    { name: "Inventory", icon: <MdInventory size={24} />, path: "/Inventory" },
-    { name: "Settings", icon: <FaCog size={24} />, path: "/settings" },
+    { name: "Inventory", icon: <MdInventory size={24} />, path: "/inventory" },
+    { name: "Settings", icon: <FaCog size={24} />, path: "/setting" },
   ];
 
   return (

@@ -5,6 +5,7 @@ import Users from "./pages/Users";
 import Navbar from "./components/Navbar";
 import Orders from "./pages/Orders";
 import Inventory from "./pages/Inventory";
+import Setting from "./pages/Setting";
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Dashboard />} />
-          <Route exact path="/orders" element={<Orders />} />
-          <Route exact path="/users" element={<Users />} />
-          <Route exact path="/inventory" element={<Inventory />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/setting" element={<Setting />} />
         </Routes>
       </div>
     </div>
