@@ -6,7 +6,7 @@ function Navbar() {
   const [open, setOpen] = useState(true);
 
   return (
-    <div className="bg-gray-900 shadow-sm w-full flex justify-end items-center">
+    <div className="bg-gray-900 shadow-sm w-full flex justify-end items-center fixed md:relative z-40">
       <div className="flex gap-2 p-4 items-center">
         <Popover className="relative ">
           <Popover.Button className="outline-none cursor-pointer text-gray-700 flex justify-center items-center">
@@ -30,8 +30,8 @@ function Navbar() {
                   </a>
                 </div>
                 <div className="mt-4 grid gap-4 grid-cols-1 overflow-hidden">
-                  {[1, 2, 3].map((i) => (
-                    <div className="flex">
+                  {[1, 2, 3].map((i, idx) => (
+                    <div key={idx} className="flex">
                       <div className="rounded-full shrink-0 bg-green-200 h-8 w-8 flex items-center justify-center">
                         <IoMdNotifications className="h-4 w-4 text-green-600" />
                       </div>

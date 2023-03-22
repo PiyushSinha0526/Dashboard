@@ -41,9 +41,9 @@ function BarChart() {
     });
   }, []);
   return (
-    <div className="w-full h-96  max-w-[850px]">
+    <div className="w-full h-96 max-w-[850px]">
       <h3 className="font-bold text-2xl pb-2">Bar Chart</h3>
-      <div className="w-full h-full border-2  p-4 rounded-md">
+      <div className="w-full h-full border-2 p-4 rounded-md">
         <Bar data={chartData} options={chartOptions} />
       </div>
     </div>

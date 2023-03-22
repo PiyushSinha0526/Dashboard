@@ -13,13 +13,15 @@ function App() {
       <Sidebar />
       <div className="w-full h-full">
         <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Dashboard />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/inventory" element={<Inventory />} />
-          <Route path="/setting" element={<Setting />} />
-        </Routes>
+        <div className="pl-20 md:pl-0">
+          <Routes>
+            <Route exact path="/" element={<Dashboard />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="/inventory" element={<Inventory />} />
+            <Route path="/setting" element={<Setting />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );

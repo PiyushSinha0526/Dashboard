@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
 
 function Sidebar() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const navigationItems = [
     { name: "Dashboard", icon: <FaHome size={24} />, path: "/" },
@@ -17,7 +17,7 @@ function Sidebar() {
   ];
 
   return (
-    <section className="h-full">
+    <section className="h-full fixed md:relative z-50">
       <div
         className={`bg-gray-900 min-h-screen ${
           open ? "w-72" : "w-16"

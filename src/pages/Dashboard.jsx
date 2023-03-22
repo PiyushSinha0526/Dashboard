@@ -25,11 +25,14 @@ ChartJS.register(
 
 function Dashboard() {
   return (
-    <div className="p-10 pt-4 pb-4 flex flex-col gap-6">
+    <div className="p-10 pt-4 pl-10 md:w-full md:pb-4 flex flex-col gap-6">
       <h1 className="text-4xl">Dashboard</h1>
       <div className="stats flex mt-3 gap-4">
-        {dummy.map((d) => (
-          <div className="p-4 bg-gray-800 max-w-sm w-full flex-wrap rounded-lg flex gap-3 text-right items-center justify-between hover:scale-105 hover:bg-gray-900 hover:shadow-white shadow-sm">
+        {dummy.map((d, idx) => (
+          <div
+            key={idx}
+            className="p-4 bg-gray-800 max-w-sm w-full flex-wrap rounded-lg flex gap-3 text-right items-center justify-between hover:scale-105 hover:bg-gray-900 hover:shadow-white shadow-sm"
+          >
             <div>
               <h2 className="text-3xl text-left font-bold">${d.value}</h2>
               <p className="text-sm text-gray-600 font-bold text-left">
@@ -45,14 +48,14 @@ function Dashboard() {
           </div>
         ))}
       </div>
-      <div className="flex w-full gap-4">
-        <div className="w-1/3 h-full ">
+      <div className="flex flex-wrap lg:flex-nowrap w-full gap-4">
+        <div className="lg:w-1/3 h-full w-full min-w-[320px]">
           <h3 className="font-bold text-2xl">Recent Orders</h3>
           <div className="w-full col-span-1 relative rounded-lg h-96 overflow-y-scroll scrollbar-hide">
             <ul className="">
-              {users.slice(0, 10).map((order, id) => (
+              {users.slice(0, 10).map((order, idx) => (
                 <li
-                  key={id}
+                  key={order.name + idx}
                   className="bg-gray-700 hover:bg-gray-800 rounded-lg my-2 p-2 flex items-center cursor-pointer"
                 >
                   <div className="bg-purple-100 rounded-lg p-3">
