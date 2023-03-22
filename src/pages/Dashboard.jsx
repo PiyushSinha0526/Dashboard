@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Bar, Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import { users } from "../data/data";
 import {
   Chart as ChartJS,
@@ -21,6 +21,7 @@ ChartJS.register(
 );
 import "chart.js/auto";
 import { FcProcess } from "react-icons/fc";
+import { dummy } from "../data/dummy";
 function Dashboard() {
   const [chartData, setChartData] = useState({
     datasets: [],
@@ -62,31 +63,9 @@ function Dashboard() {
     });
   }, []);
   console.log(users);
-  const dummy = [
-    {
-      label: "Orders",
-      value: 39,
-      remaining: "86",
-    },
-    // {
-    //   label: "Inventory",
-    //   value: 100,
-    //   remaining: "70",
-    // },
-    {
-      label: "sales",
-      value: 950,
-      remaining: "67",
-    },
-    {
-      label: "Revenue",
-      value: 7200,
-      remaining: "93",
-    },
-  ];
 
   return (
-    <div className=" p-10 pb-4 flex flex-col gap-6">
+    <div className="p-10 pt-4 pb-4 flex flex-col gap-6">
       <h1 className="text-4xl">Dashboard</h1>
       <div className="stats flex mt-3 gap-4">
         {dummy.map((d) => (
@@ -107,12 +86,6 @@ function Dashboard() {
         ))}
       </div>
       <div className="flex w-full gap-4">
-        <div className="w-full h-96  max-w-[850px]">
-          <h3 className="font-bold text-2xl pb-2">Bar Chart</h3>
-          <div className="w-full h-full border-2  p-4 rounded-md">
-            <Bar data={chartData} options={chartOptions} />
-          </div>
-        </div>
         <div className="w-1/3 h-full ">
           <h3 className="font-bold text-2xl">Recent Orders</h3>
           <div className="w-full col-span-1 relative rounded-lg h-96 overflow-y-scroll scrollbar-hide">
@@ -135,6 +108,12 @@ function Dashboard() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+        <div className="w-full h-96  max-w-[850px]">
+          <h3 className="font-bold text-2xl pb-2">Bar Chart</h3>
+          <div className="w-full h-full border-2  p-4 rounded-md">
+            <Bar data={chartData} options={chartOptions} />
           </div>
         </div>
       </div>
