@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { FaHome, FaListAlt, FaUsers, FaComments, FaCog } from "react-icons/fa";
+import { FaHome, FaUsers, FaCog } from "react-icons/fa";
+import { AiTwotoneShop } from "react-icons/ai";
+import { MdInventory } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
 
@@ -8,9 +10,9 @@ function Sidebar() {
 
   const navigationItems = [
     { name: "Dashboard", icon: <FaHome size={24} />, path: "/" },
-    { name: "Orders", icon: <FaListAlt size={24} />, path: "/orders" },
+    { name: "Orders", icon: <AiTwotoneShop size={24} />, path: "/orders" },
     { name: "Users", icon: <FaUsers size={24} />, path: "/users" },
-    { name: "Inventory", icon: <FaComments size={24} />, path: "/Inventory" },
+    { name: "Inventory", icon: <MdInventory size={24} />, path: "/Inventory" },
     { name: "Settings", icon: <FaCog size={24} />, path: "/settings" },
   ];
 
